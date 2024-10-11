@@ -1,0 +1,127 @@
+<template>
+  <header class="header">
+    <div class="header__logo">
+      <img :src="logo" alt="" />
+      <p>Inicio</p>
+    </div>
+    <div class="header__sale">
+      <div v-if="true" style="cursor: pointer">
+        <span class="material-symbols-outlined header__sale-cart"> shopping_cart </span>
+        <div class="header__sale-info">Carrinho</div>
+        <div class="header__sale-qtd">3</div>
+      </div>
+    </div>
+  </header>
+</template>
+
+<script lang="ts" setup>
+import logo from '@/assets/imgs/logo/logoNoBg.png'
+</script>
+
+<style lang="scss" scoped>
+.header {
+  background-color: var(--soft-white);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--light-gray);
+  position: fixed;
+  width: 100%;
+}
+
+.header__logo {
+  display: flex;
+  align-items: end;
+  width: 150px;
+  margin-left: 150px;
+}
+
+.header__logo img {
+  width: 100%;
+}
+
+.header__logo p {
+  cursor: pointer;
+  font-weight: var(--font-bold);
+  text-decoration: underline;
+  position: absolute;
+  color: var(--base);
+  bottom: 8px;
+  left: 308px;
+  font-size: 1.2rem;
+}
+
+.header__sale > div {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: 28px;
+  margin-right: 150px;
+  font-weight: var(--font-bold);
+  font-style: italic;
+}
+
+.header__sale-cart {
+  font-size: 2rem;
+}
+
+.header__sale-info {
+  position: relative;
+  top: 4px;
+  font-weight: var(--font-semibold);
+  color: var(--base);
+}
+
+.header__sale-qtd {
+  background-color: var(--light-secondary);
+  color: var(--base);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: var(--font-semibold);
+  position: absolute;
+  top: -15px;
+  right: 55px;
+  font-weight: var(--font-bold);
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 80px;
+  }
+
+  .header__logo {
+    width: 100px;
+    margin-left: 20px;
+  }
+
+  .header__logo p {
+    bottom: 10px;
+    font-size: 1rem;
+    left: 124px;
+  }
+
+  .header__sale > div {
+    margin-right: 20px;
+    top: 18px;
+  }
+
+  .header__sale-cart {
+    font-size: 1.5rem;
+  }
+
+  .header__sale-info {
+    font-size: 0.8rem;
+  }
+
+  .header__sale-qtd {
+    right: 45px;
+    font-size: 0.6rem;
+  }
+}
+</style>
