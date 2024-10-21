@@ -4,11 +4,13 @@
     <div class="content">
       <RouterView />
     </div>
+    <Footer />
   </div>
 </template>
 
 <script lang="ts" setup>
 import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
 </script>
 
 <style scoped>
@@ -20,6 +22,7 @@ import Header from './components/Header.vue'
 .content {
   height: 100%;
   padding-top: 100px;
+  padding-bottom: 32px;
 }
 
 @media screen and (max-width: 768px) {

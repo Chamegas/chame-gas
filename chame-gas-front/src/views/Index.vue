@@ -5,19 +5,33 @@
         <h1>Faça já seu pedido</h1>
       </div>
       <div class="product-container">
-        <div class="product">
-          <div class="product-content"></div>
-          <div class="product-image"></div>
-        </div>
-        <div class="product">Água</div>
+        <Product v-for="(product, index) in ProductsMainIndex" :key="index" :="product"
+          :onProductSelect="() => handleProductSelect(index)" />
       </div>
     </div>
-    <Footer />
+    <ProductForm v-if="canShowForm" :="productForm" :onClose="handleCloseForm" />
   </div>
 </template>
 
-<script setup>
-import Footer from '@/components/Footer.vue'
+<script setup lang="ts">
+import Product from '@/components/index/Product.vue'
+import ProductForm from '@/components/index/ProductForm.vue';
+import { ProductsMainIndex, ProductsForm } from '@/data/products';
+import type { ProductFormType } from '@/types/products';
+import { ref } from 'vue';
+
+let productForm: ProductFormType = {} as ProductFormType;
+const canShowForm = ref(false);
+
+const handleProductSelect = (id: number) => {
+  productForm = ProductsForm[id];
+  canShowForm.value = true;
+}
+
+const handleCloseForm = () => {
+  canShowForm.value = false;
+}
+
 </script>
 
 <style scoped>
@@ -26,10 +40,7 @@ import Footer from '@/components/Footer.vue'
   flex-direction: column;
   height: 100%;
   padding-top: 40px;
-  padding-bottom: 32px;
-}
-
-.index-content {
+  overflow: auto;
 }
 
 .title {
@@ -50,19 +61,6 @@ import Footer from '@/components/Footer.vue'
   margin-top: 100px;
 }
 
-.product {
-  max-width: 480px;
-  width: 40%;
-  height: 200px;
-  background-color: var(--white);
-  color: var(--white);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
 @media screen and (max-width: 768px) {
   .title {
     width: 80%;
@@ -76,12 +74,6 @@ import Footer from '@/components/Footer.vue'
     align-items: center;
     justify-content: center;
     gap: 40px;
-  }
-
-  .product {
-    width: 80%;
-    height: 150px;
-    font-size: 1.2rem;
   }
 }
 </style>

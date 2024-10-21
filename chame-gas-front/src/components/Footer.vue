@@ -29,7 +29,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import InstaLogo from '@/assets/imgs/footer/instagram.svg'
 import WhatsLogo from '@/assets/imgs/footer/whatsaap.svg'
 import Map from '@/assets/imgs/footer/map.svg'
