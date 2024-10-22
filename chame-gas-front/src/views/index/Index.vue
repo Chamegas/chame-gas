@@ -14,8 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import Product from '@/components/index/Product.vue'
-import ProductForm from '@/components/index/ProductForm.vue';
+import Product from '@/views/index/components/Product.vue'
+import ProductForm from '@/views/index/components/ProductForm.vue';
 import { ProductsMainIndex, ProductsForm } from '@/data/products';
 import type { ProductFormType } from '@/types/products';
 import { ref } from 'vue';

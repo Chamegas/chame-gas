@@ -37,7 +37,7 @@
 import { computed, onBeforeUnmount, onMounted, ref, watch, } from 'vue'
 import CloseIcon from '@/assets/imgs/icons/close.svg'
 import RadioInput from '@/components/inputs/RadioInput.vue';
-import DateInput from '../inputs/DateInput.vue';
+import DateInput from '@/components/inputs/DateInput.vue';
 import { ProductFormType } from '@/types/products';
 
 interface ProductFormProps extends ProductFormType {
