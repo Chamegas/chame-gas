@@ -7,6 +7,11 @@ const router = createRouter({
       path: '/',
       name: 'index',
       component: () => import('@/views/index/Index.vue')
+    },
+    {
+      path: '/',
+      name: 'cartIndex',
+      component: () => import('@/views/cart/Index.vue')
     }
   ]
 })

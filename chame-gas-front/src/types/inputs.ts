@@ -15,4 +15,6 @@ export type dateInputProps = LabelProps & {
   dateType: 'date' | 'month' | 'datetime-local'
   value: string | null
   errorMessage: string
+  minDate?: string | null
+  maxDate?: string | null
 }

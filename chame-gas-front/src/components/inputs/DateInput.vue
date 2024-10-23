@@ -3,7 +3,7 @@
     <InputLabel :is-required="props.isRequired" :id="props.id" :label-text="props.labelText" />
     <div class="dateInput__input">
       <input :type="props.dateType" :value="props.value" @change="updateValue" :required="props.isRequired"
-        :id="props.id ?? ''">
+        :id="props.id ?? ''" :min="props.minDate ?? undefined" :max="props.maxDate ?? undefined">
       <span v-if="props.isErro" class="dateInput__input-error">{{ props.errorMessage }}</span>
     </div>
   </div>

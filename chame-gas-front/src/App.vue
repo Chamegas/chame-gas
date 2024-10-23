@@ -11,6 +11,12 @@
 <script lang="ts" setup>
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
+import { onBeforeMount } from 'vue';
+import { CartService } from './services/cartService';
+
+onBeforeMount(() => {
+  new CartService()
+})
 </script>
 
 <style scoped>

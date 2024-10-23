@@ -1,6 +1,6 @@
 <template>
   <div class="productForm" @click="props.onClose()">
-    <form @submit="handleSubmition" class="productForm__container" @click.stop>
+    <form @submit="handleSubmission" class="productForm__container" @click.stop>
       <div class="productForm__container-topAction">
         <img :src="CloseIcon" alt="x" @click="props.onClose()">
       </div>
@@ -39,6 +39,7 @@ import CloseIcon from '@/assets/imgs/icons/close.svg'
 import RadioInput from '@/components/inputs/RadioInput.vue';
 import DateInput from '@/components/inputs/DateInput.vue';
 import { ProductFormType } from '@/types/products';
+import { CartService } from '@/services/cartService';
 
 interface ProductFormProps extends ProductFormType {
   onClose: Function
@@ -47,6 +48,7 @@ interface ProductFormProps extends ProductFormType {
 const props = defineProps<ProductFormProps>()
 const moneyFormatter = () => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' })
 const isDateWrong = ref(false)
+const cartService = new CartService()
 
 const dateInputValue = ref(props.dateInput?.value || "")
 const radioInputMarkedOption = ref(props.radioInput.markedOption)
@@ -74,11 +76,16 @@ const isFormValid = () => {
 }
 
 
-const handleSubmition = (event: Event) => {
+const handleSubmission = (event: Event) => {
   event.preventDefault()
   if (!isFormValid()) {
     return
   }
+  cartService.addProductToCart({
+    id: props.productInfo.id,
+    isComplete: radioInputMarkedOption.value as boolean,
+    validity: dateInputValue.value === "" ? null : dateInputValue.value
+  })
   props.onClose()
 }
 

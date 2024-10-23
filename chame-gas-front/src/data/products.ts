@@ -2,6 +2,7 @@ import { ProductFormType, ProductMain } from '@/types/products'
 import AguaProductImg from '@/assets/imgs/products/aguaMineral.jpg'
 import GasProductImg from '@/assets/imgs/products/gasCozinha.jpg'
 import { radioInputProps } from '@/types/inputs'
+import { waterDateValidityGetMaxDate, waterDateValidityGetMinDate } from '@/utils/waterDateValidity'
 
 const productRadio: radioInputProps = {
   labelValues: ['Sim', 'Não'],
@@ -15,12 +16,14 @@ const productRadio: radioInputProps = {
 
 const ProductsMainIndex: ProductMain[] = [
   {
+    id: 1,
     title: 'Água',
     description: 'Galão de Água 20 litros',
     image: AguaProductImg,
     imageAlt: 'Galão de Água 20 litros'
   },
   {
+    id: 2,
     title: 'Gás',
     description: 'Gás de cozinha GLP 13Kg',
     image: GasProductImg,
@@ -34,6 +37,8 @@ const ProductsForm: ProductFormType[] = [
     radioInput: productRadio,
     dateInput: {
       dateType: 'month',
+      maxDate: waterDateValidityGetMaxDate(),
+      minDate: waterDateValidityGetMinDate(),
       value: null,
       errorMessage: 'Vasilhame vencido! Recarga não disponível',
       id: 'validity',

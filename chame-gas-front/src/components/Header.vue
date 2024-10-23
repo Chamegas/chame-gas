@@ -1,14 +1,16 @@
 <template>
   <header class="header">
     <div class="header__logo">
-      <img :src="logo" alt="" />
-      <p>Inicio</p>
+      <router-link :to="{ name: 'index' }">
+        <img :src="logo" alt="logo" />
+        <p>Inicio</p>
+      </router-link>
     </div>
     <div class="header__sale">
-      <div v-if="true" style="cursor: pointer">
+      <div style="cursor: pointer" @click="goToCart">
         <span class="material-symbols-outlined header__sale-cart"> shopping_cart </span>
         <div class="header__sale-info">Carrinho</div>
-        <div class="header__sale-qtd">3</div>
+        <div v-if="cartQuantity" class="header__sale-qtd">{{ cartQuantity }}</div>
       </div>
     </div>
   </header>
@@ -16,6 +18,17 @@
 
 <script lang="ts" setup>
 import logo from '@/assets/imgs/logo/logoNoBg.png'
+import router from '@/router';
+import { computed } from 'vue';
+import { CartService } from '@/services/cartService';
+
+const goToCart = () => {
+  router.push({ name: 'cartIndex' });
+}
+const cartService = CartService.getInstance()
+
+const cartQuantity = computed(() => cartService.getCartQuantity())
+
 </script>
 
 <style lang="scss" scoped>
@@ -39,6 +52,7 @@ import logo from '@/assets/imgs/logo/logoNoBg.png'
 
 .header__logo img {
   width: 100%;
+  cursor: pointer;
 }
 
 .header__logo p {
@@ -52,7 +66,7 @@ import logo from '@/assets/imgs/logo/logoNoBg.png'
   font-size: 1.2rem;
 }
 
-.header__sale > div {
+.header__sale>div {
   display: flex;
   align-items: center;
   position: relative;
@@ -106,7 +120,7 @@ import logo from '@/assets/imgs/logo/logoNoBg.png'
     left: 124px;
   }
 
-  .header__sale > div {
+  .header__sale>div {
     margin-right: 20px;
     top: 18px;
   }

@@ -1,5 +1,6 @@
 import { dateInputProps, radioInputProps } from './inputs'
 export type ProductMain = {
+  id: number
   title: string
   description: string
   image: string
@@ -12,4 +13,10 @@ export type ProductFormType = {
   dateInput: dateInputProps | null
   price: number
   fullPrice: number
+}
+
+export type ProductMainData = {
+  id: number
+  isComplete: boolean
+  validity: string | null
 }
