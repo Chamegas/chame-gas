@@ -40,6 +40,7 @@ const handleCloseForm = () => {
   flex-direction: column;
   height: 100%;
   padding-top: 40px;
+  padding-bottom: 30px;
   overflow: auto;
 }
 

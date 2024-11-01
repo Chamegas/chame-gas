@@ -20,3 +20,8 @@ export type ProductMainData = {
   isComplete: boolean
   validity: string | null
 }
+
+export type ProductData = ProductMainData & {
+  name: string
+  price: number
+}

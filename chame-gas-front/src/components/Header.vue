@@ -8,7 +8,9 @@
     </div>
     <div class="header__sale">
       <div style="cursor: pointer" @click="goToCart">
-        <span class="material-symbols-outlined header__sale-cart"> shopping_cart </span>
+        <div class="header__sale-cart">
+          <img :src="Cart" alt="cart">
+        </div>
         <div class="header__sale-info">Carrinho</div>
         <div v-if="cartQuantity" class="header__sale-qtd">{{ cartQuantity }}</div>
       </div>
@@ -18,6 +20,7 @@
 
 <script lang="ts" setup>
 import logo from '@/assets/imgs/logo/logoNoBg.png'
+import Cart from '@/assets/imgs/icons/cart.svg'
 import router from '@/router';
 import { computed } from 'vue';
 import { CartService } from '@/services/cartService';
@@ -76,9 +79,6 @@ const cartQuantity = computed(() => cartService.getCartQuantity())
   font-style: italic;
 }
 
-.header__sale-cart {
-  font-size: 2rem;
-}
 
 .header__sale-info {
   position: relative;
@@ -104,6 +104,14 @@ const cartQuantity = computed(() => cartService.getCartQuantity())
   font-weight: var(--font-bold);
 }
 
+.header__sale-cart {
+  width: 30px;
+}
+
+.header__sale-cart img {
+  width: 100%;
+}
+
 @media screen and (max-width: 768px) {
   .header {
     height: 80px;
@@ -122,11 +130,11 @@ const cartQuantity = computed(() => cartService.getCartQuantity())
 
   .header__sale>div {
     margin-right: 20px;
-    top: 18px;
+    top: 23px;
   }
 
   .header__sale-cart {
-    font-size: 1.5rem;
+    width: 25px;
   }
 
   .header__sale-info {
