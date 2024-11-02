@@ -83,7 +83,7 @@ const handleSubmission = (event: Event) => {
   }
   cartService.addProductToCart({
     id: props.productInfo.id,
-    isComplete: radioInputMarkedOption.value as boolean,
+    isComplete: !radioInputMarkedOption.value as boolean,
     validity: dateInputValue.value === "" ? null : dateInputValue.value
   })
   props.onClose()
