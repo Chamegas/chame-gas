@@ -96,7 +96,8 @@ watch(() => dateInputValue.value, (newValue) => {
     const [year, month] = newValue.split('-').map(Number);
     const actualDate = new Date();
     const inputDate = new Date(year, month - 1);
-    isDateWrong.value = actualDate >= inputDate;
+    const maxDate = props.dateInput?.maxDate ? new Date(props.dateInput.maxDate) : null;
+    isDateWrong.value = (actualDate >= inputDate) || (maxDate !== null && inputDate >= maxDate);
   } else {
     isDateWrong.value = false;
   }

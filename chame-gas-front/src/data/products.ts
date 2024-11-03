@@ -40,20 +40,20 @@ const ProductsForm: ProductFormType[] = [
       maxDate: waterDateValidityGetMaxDate(),
       minDate: waterDateValidityGetMinDate(),
       value: null,
-      errorMessage: 'Vasilhame vencido! Recarga não disponível',
+      errorMessage: 'Vasilhame vencido ou data inválida',
       id: 'validity',
       labelText: 'Qual a validade do vasilhame ?',
       isRequired: true
     },
-    price: 12,
-    fullPrice: 30
+    price: 13,
+    fullPrice: 50
   },
   {
     productInfo: ProductsMainIndex[1],
     radioInput: productRadio,
     dateInput: null,
-    price: 70,
-    fullPrice: 90
+    price: 115,
+    fullPrice: 360
   }
 ]
 
