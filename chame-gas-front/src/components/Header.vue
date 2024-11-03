@@ -34,7 +34,7 @@ const cartQuantity = computed(() => cartService.getCartQuantity())
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .header {
   background-color: var(--soft-white);
   height: 100px;
