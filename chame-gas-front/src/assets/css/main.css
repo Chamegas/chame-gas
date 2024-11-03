@@ -10,6 +10,9 @@ body {
   font-size: 16px;
   font-weight: var(--font-normal);
 }
+body.no-scroll {
+  overflow: hidden;
+}
 
 h1,
 h2,
@@ -22,4 +25,5 @@ h6 {
 
 #app {
   height: 100vh;
+  background-color: var(--soft-white);
 }

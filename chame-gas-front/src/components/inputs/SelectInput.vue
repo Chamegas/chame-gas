@@ -40,6 +40,6 @@ const updateSelectedOption = () => {
   font-size: 1.05rem;
   cursor: pointer;
   text-align: center;
-
+  color: black;
 }
 </style>

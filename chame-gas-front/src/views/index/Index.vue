@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="index" v-if="!canShowForm">
     <div class="index-content">
       <div class="title">
         <h1>Faça já seu pedido</h1>
@@ -9,8 +9,8 @@
           :onProductSelect="() => handleProductSelect(index)" />
       </div>
     </div>
-    <ProductForm v-if="canShowForm" :="productForm" :onClose="handleCloseForm" />
   </div>
+  <ProductForm v-else :="productForm" :onClose="handleCloseForm" />
 </template>
 
 <script setup lang="ts">
@@ -41,7 +41,6 @@ const handleCloseForm = () => {
   height: 100%;
   padding-top: 40px;
   padding-bottom: 30px;
-  overflow: auto;
 }
 
 .title {

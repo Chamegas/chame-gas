@@ -107,6 +107,7 @@ const sendOrder = () => {
   overflow-y: auto;
   max-width: 1200px;
   margin: 0 auto;
+  background-color: var(--soft-white);
 }
 
 .cart__form {
@@ -144,6 +145,8 @@ const sendOrder = () => {
   font-weight: var(--font-bold);
   color: var(--base);
 }
+
+
 
 .resume__products div {
   display: flex;

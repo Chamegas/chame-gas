@@ -24,8 +24,6 @@ const props = defineProps<LabelProps>()
 
 .required::after {
   content: '*';
-  position: relative;
-  top: -2px;
   color: red;
 }
 </style>

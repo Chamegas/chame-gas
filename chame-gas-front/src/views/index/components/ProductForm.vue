@@ -106,16 +106,16 @@ watch(() => dateInputValue.value, (newValue) => {
 
 <style scoped>
 .productForm {
-  position: fixed;
-  height: 100vh;
+  position: absolute;
   width: 100vw;
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
   top: 0;
-  left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2;
+  overflow-y: auto;
 }
 
 .productForm__container {
@@ -123,9 +123,9 @@ watch(() => dateInputValue.value, (newValue) => {
   width: 100%;
   height: 100%;
   padding: 28px;
-  overflow: auto;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 .productForm__container-topAction {
@@ -142,7 +142,6 @@ watch(() => dateInputValue.value, (newValue) => {
 .productForm__container-content {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 }
 
 .productForm__content-img {
@@ -161,7 +160,7 @@ watch(() => dateInputValue.value, (newValue) => {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  height: 100%;
+  flex: 1;
 }
 
 .productForm__principal-info {
@@ -190,12 +189,12 @@ watch(() => dateInputValue.value, (newValue) => {
 }
 
 .productForm__content-final {
-  margin-top: auto;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  gap: 16px;
-  padding-top: 8px;
+  padding-top: 12px;
+  gap: 8px;
+  flex: 1;
+  justify-content: end;
 }
 
 .productForm__final-price {
@@ -240,11 +239,12 @@ watch(() => dateInputValue.value, (newValue) => {
     border-radius: 12px;
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
+    overflow-y: none;
   }
 
   .productForm__container-content {
     flex-direction: row;
+    padding-bottom: 0;
   }
 
   .productForm__content-img {
@@ -269,7 +269,7 @@ watch(() => dateInputValue.value, (newValue) => {
     justify-content: space-between;
     flex-direction: row;
     gap: 0px;
-    align-items: center;
+    align-items: end;
   }
 
   .productForm__final-action {

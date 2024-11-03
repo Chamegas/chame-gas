@@ -41,6 +41,7 @@ const updateValue = (event: Event) => {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 100%;
 }
 
 .dateInput__input input {
@@ -49,6 +50,7 @@ const updateValue = (event: Event) => {
   border: 1px solid #ccc;
   border-radius: 4px;
   text-align: center;
+  color: black !important;
 }
 
 .dateInput__input-error {

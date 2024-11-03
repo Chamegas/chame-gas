@@ -21,8 +21,8 @@ onBeforeMount(() => {
 
 <style scoped>
 .main {
-  background-color: var(--soft-white);
   height: 100%;
+  background-color: var(--soft-white);
 }
 
 .content {
@@ -32,6 +32,10 @@ onBeforeMount(() => {
 }
 
 @media screen and (max-width: 768px) {
+  .main {
+    height: auto;
+  }
+
   .content {
     padding-top: 80px;
   }
