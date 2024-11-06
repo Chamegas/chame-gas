@@ -52,7 +52,7 @@ const ProductsForm: ProductFormType[] = [
     productInfo: ProductsMainIndex[1],
     radioInput: productRadio,
     dateInput: null,
-    price: 115,
+    price: 120,
     fullPrice: 360
   }
 ]
