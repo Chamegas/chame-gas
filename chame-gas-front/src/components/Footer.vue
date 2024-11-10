@@ -2,11 +2,8 @@
   <div class="footer">
     <div class="footer__businessInfo">
       <div class="footer__businessInfo-contact">
-        <a
-          class="footer__href"
-          href="https://api.whatsapp.com/send/?phone=7536323370&text&type=phone_number&app_absent=0"
-          target="_blank"
-        >
+        <a class="footer__href"
+          href="https://api.whatsapp.com/send/?phone=7536323370&text&type=phone_number&app_absent=0" target="_blank">
           <img :src="WhatsLogo" alt="Whatsapp" class="footer__href-icon" />
           <p class="footer__href-text">(75) 3632-3370</p>
         </a>
@@ -16,11 +13,9 @@
         </a>
       </div>
       <div class="footer__businessInfo-address">
-        <a
-          class="footer__href"
+        <a class="footer__href"
           href="https://www.google.com/maps/place/Chame+G%C3%A1s+e+%C3%81gua+Mineral/@-12.9726119,-39.2742455,16z/data=!4m10!1m2!2m1!1sCompanhia+de+g%C3%A1s!3m6!1s0x73e2b0d4210f797:0xba5a1d539a0d1e29!8m2!3d-12.9726113!4d-39.2698687!15sChFDb21wYW5oaWEgZGUgZ8Ohc5IBC2dhc19jb21wYW554AEA!16s%2Fg%2F11pkjqsxwd?entry=ttu&g_ep=EgoyMDI0MTAwOC4wIKXMDSoASAFQAw%3D%3D"
-          target="_blank"
-        >
+          target="_blank">
           <img :src="Map" alt="Whatsapp" class="footer__href-icon" />
           <p class="footer__href-text">Estamos aqui</p>
         </a>
@@ -83,13 +78,17 @@ import Map from '@/assets/imgs/footer/map.svg'
 }
 
 .footer__href-icon {
-  width: 20px;
+  width: 26px;
 }
 
 @media screen and (max-width: 420px) {
   .footer__businessInfo {
     justify-content: center;
-    gap: 16px;
+    gap: 28px;
+  }
+
+  .footer__businessInfo-contact {
+    gap: 28px;
   }
 
   .footer__href-text {
@@ -97,7 +96,7 @@ import Map from '@/assets/imgs/footer/map.svg'
   }
 
   .footer__href-icon {
-    width: 22px;
+    width: 26px;
   }
 }
 </style>

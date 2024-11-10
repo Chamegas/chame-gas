@@ -58,4 +58,8 @@ const updateValue = (event: Event) => {
   font-weight: var(--font-bold);
   color: red;
 }
+
+input[type='month'] {
+  width: 100% !important;
+}
 </style>
