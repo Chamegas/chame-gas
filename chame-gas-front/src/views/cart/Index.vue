@@ -92,7 +92,7 @@ const sendOrder = () => {
     style: 'currency',
     currency: 'BRL'
   })} --> ${payment.value.toLocaleUpperCase()}`;
-  const url = `https://api.whatsapp.com/send?phone=75983348167&text=${encodeURIComponent(message)}`;
+  const url = `https://api.whatsapp.com/send?phone=7536323370&text=${encodeURIComponent(message)}`;
   window.open(url, '_blank');
   cartService.cleanCart()
   router.push({ name: 'index' })
