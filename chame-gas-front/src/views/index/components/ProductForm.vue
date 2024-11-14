@@ -72,7 +72,10 @@ const checkMobileView = () => {
 }
 
 const isFormValid = () => {
-  return !isDateWrong.value && [true, false].includes(radioInputMarkedOption.value as boolean)
+  if(radioInputMarkedOption.value as boolean == false){
+    return true;
+  }
+  return !isDateWrong.value && radioInputMarkedOption.value as boolean == true
 }
 
 
