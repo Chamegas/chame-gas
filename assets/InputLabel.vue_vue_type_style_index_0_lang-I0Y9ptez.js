@@ -1,0 +1,1 @@
+import{d as t,c as a,a as o,z as i,t as n,o as r}from"./index-DeoQYfVT.js";const l={class:"inputLabel"},c=["for"],u=t({__name:"InputLabel",props:{isRequired:{type:Boolean},id:{},labelText:{}},setup(s){const e=s;return(p,d)=>(r(),a("div",l,[o("label",{for:e.id?e.id:void 0,class:i(["inputLabel__text",{required:e.isRequired}])},n(e.labelText),11,c)]))}});export{u as _};
