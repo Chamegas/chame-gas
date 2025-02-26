@@ -1,0 +1,1 @@
+.inputLabel{width:100%;display:flex;justify-content:space-between}.inputLabel__text{font-weight:var(--font-medium)}.required:after{content:"*";color:red}
