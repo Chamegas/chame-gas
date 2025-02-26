@@ -45,14 +45,14 @@ const ProductsForm: ProductFormType[] = [
       labelText: 'Qual a validade do vasilhame ?',
       isRequired: true
     },
-    price: 13,
+    price: 14,
     fullPrice: 50
   },
   {
     productInfo: ProductsMainIndex[1],
     radioInput: productRadio,
     dateInput: null,
-    price: 120,
+    price: 125,
     fullPrice: 370
   }
 ]

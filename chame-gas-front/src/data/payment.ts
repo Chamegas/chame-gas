@@ -14,12 +14,12 @@ const paymentMethods: PaymentMethods[] = [
   {
     id: 3,
     name: 'Crédito',
-    fee: 0.041
+    fee: 0.04
   },
   {
     id: 4,
     name: 'Débito',
-    fee: 0.041
+    fee: 0.04
   }
 ]
 
