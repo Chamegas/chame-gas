@@ -63,6 +63,7 @@ import TextInput from '@/components/inputs/TextInput.vue';
 import SelectInput from '@/components/inputs/SelectInput.vue';
 import Delete from '@/assets/imgs/icons/delete.svg';
 import router from '@/router';
+import { PaymentFee } from '@/types/payment';
 
 const cartService = CartService.getInstance();
 const cartProducts = reactive<ProductData[]>([]);
@@ -81,9 +82,13 @@ const removeProduct = (index: number): void => {
 }
 
 const total = computed(() => {
-  const totalCart = cartProducts.reduce((acc, item) => acc + item.price, 0);
-  const paymentFee = paymentMethods.find(item => item.name === payment.value)?.fee || 0;
-  return Math.ceil(totalCart * (1 + paymentFee));
+  const paymentFee: PaymentFee | Number = paymentMethods.find(item => item.name === payment.value)?.fee || 0;
+  const totalCart = cartProducts.reduce((acc, item) => {
+    if(paymentFee === 0) return acc + item.price;
+    const feeValue = item.isComplete? (paymentFee as PaymentFee)[item.id].full : (paymentFee as PaymentFee)[item.id].normal;
+    return acc + item.price + feeValue;
+  }, 0);
+  return totalCart;
 })
 
 

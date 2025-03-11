@@ -53,7 +53,7 @@ const ProductsForm: ProductFormType[] = [
     radioInput: productRadio,
     dateInput: null,
     price: 125,
-    fullPrice: 370
+    fullPrice: 385
   }
 ]
 
